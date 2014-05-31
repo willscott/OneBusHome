@@ -4,6 +4,8 @@ var ping = function() {
       window.location.reload();
     } else if (data.redirect) {
       window.location.href = data.redirect;
+    } else if (data.okay && window.location.href.indexOf('online') < 0) {
+      window.location.href = '/online';
     } else if (data.msg) {
       document.getElementById('msg').innerHTML = data.msg;
       document.getElementById('msg').style.display = 'block';

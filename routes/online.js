@@ -22,6 +22,7 @@ var pingServer = function(cb) {
         for(var key in data) {
           store.set(key, data[key], function() {});
         }
+        data.okay = true;
         cb(data);
         nbad = 0;
       });
