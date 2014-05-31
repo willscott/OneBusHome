@@ -3,6 +3,7 @@ var http = require('http');
 var mac = require('getmac');
 var setup = require('setup')();
 var hwAddr;
+var store = require('file-store')(__dirname + '/onebushome.json');
 
 mac.getMac(function(err,macAddress){
     if (err)  throw err;
@@ -50,6 +51,11 @@ module.exports = function(app) {
           res.redirect('/online?id=' + chunk);
         });
       } else {
+        store.load('wifi', function(err, wifi) {
+          if (!err && wifi.length) {
+            doWifi(wifi[0]);
+          }
+        });
         res.render('setup', { mac: hwAddr, status: serv.statusCode, ssid:ssids });
       }
     }).on('error', function(e) {

@@ -6,6 +6,7 @@
   "dependencies": {
     "ejs": "^1.0.0",
     "express": "4.x",
+    "file-store": "^0.1.0",
     "getmac": "^1.0.6",
     "setup": "0.0.2",
     "wireless-osx": "0.0.1"
