@@ -5,6 +5,7 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+app.use('/static', express.static(__dirname + '/static'));
 var indexRouter = require('./routes/index')(app.route('/'));
 var onlineRouter = require('./routes/online')(app.route('/online'));
 

@@ -8,18 +8,12 @@
     <div class="container">
 
       <h1>OneBusHome <small>Passive Deployment of OneBusAway</small></h1>
-       <p>You are seeing this message because this device could not connect
-       to its central server. (Error: <%= status %>)</p>
+       <p>You are seeing this message because this device is not configured</p>
 
         <div class="hero-unit">
-          <h1>Select Network</h1>
-          <form>
-            <select name='ssid'>
-            <% for(var i=0; i<ssid.length; i++) {%>
-               <option><%= ssid[i] %></option>
-            <% } %>
-            </select><br />
-            <input type='text' name='password' placeholder='password (optional)'/>
+          <h1>Set Stop</h1>
+          <form action='/online' method='get'>
+            <input type='text' name='id'/>
             <input type='submit' value='Connect' />
            </form>
         </div>
