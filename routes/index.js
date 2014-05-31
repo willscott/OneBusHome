@@ -44,11 +44,19 @@ module.exports = function(app) {
       res.redirect('/online?id=');
       return;
     }
-    http.get("http://quimian.com/oba.conf?id=" + hwAddr, function(serv) {
+    http.get("http://quimian.com/oba.json?id=" + hwAddr, function(serv) {
       if (serv.statusCode === 200) {
         // Connectivity!
-        serv.on('data', function (chunk) {
-          res.redirect('/online?id=' + chunk);
+        var body = '';
+        serv.on('data', function(chunk) {
+          body += chunk;
+        });
+        serv.on('end', function() {
+          var data = JSON.parse(body);
+          for(var key in data) {
+            store.set(key, data[key], function() {});
+          }
+          res.redirect('/online');
         });
       } else {
         store.load('wifi', function(err, wifi) {
