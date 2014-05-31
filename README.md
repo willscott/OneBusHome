@@ -19,3 +19,11 @@ Components
 * Configuration Web Server
 * VM Image
 * Upcoming Route Display
+
+Things that can be displayed
+--------
+
+* Amber Alerts
+* Game Scores
+* Weather
+* Bus Service Changes
