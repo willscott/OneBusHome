@@ -59,9 +59,9 @@ module.exports = function(app) {
           res.redirect('/online');
         });
       } else {
-        store.load('wifi', function(err, wifi) {
-          if (!err && wifi.length) {
-            doWifi(wifi[0]);
+        store.get('wifi', function(err, wifi) {
+          if (!err && wifi) {
+            doWifi(wifi);
           }
         });
         res.render('setup', { mac: hwAddr, status: serv.statusCode, ssid:ssids });

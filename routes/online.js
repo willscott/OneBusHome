@@ -31,6 +31,8 @@ var pingServer = function(cb) {
       if (nbad > 10) {
         nbad = 0;
         cb({redirect:'/'});
+      } else {
+        cb({});
       }
     }
   }).on('error', function(e) {
@@ -38,6 +40,8 @@ var pingServer = function(cb) {
     if (nbad > 10) {
       nbad = 0;
       cb({redirect:'/'});
+    } else {
+      cb({});
     }
   });
 }
