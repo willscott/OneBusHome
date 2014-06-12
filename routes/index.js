@@ -2,13 +2,13 @@ var express = require('express');
 var http = require('http');
 var mac = require('getmac');
 var setup = require('setup')();
-var hwAddr;
+var hwAddr = 0;
 var store = require('file-store')(__dirname + '/onebushome.json');
 
-mac.getMac(function(err,macAddress){
-    if (err)  throw err;
-    hwAddr = macAddress;
-});
+//mac.getMac(function(err,macAddress){
+//    if (err)  throw err;
+//    hwAddr = macAddress;
+//});
 
 var ssids = [];
 if (require('os').platform() === 'darwin') {
