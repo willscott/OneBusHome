@@ -2,11 +2,11 @@ var store = require('file-store')(__dirname + '/onebushome.json');
 var mac = require('getmac');
 var http = require('http');
 
-var hwAddr;
-mac.getMac(function(err,macAddress){
-    if (err)  throw err;
-    hwAddr = macAddress;
-});
+var hwAddr = 0;
+//mac.getMac(function(err,macAddress){
+//    if (err)  throw err;
+//    hwAddr = macAddress;
+//});
 
 var nbad = 0;
 var pingServer = function(cb) {
