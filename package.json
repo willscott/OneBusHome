@@ -1,7 +1,7 @@
 {
   "name": "OneBusHome",
   "description": "Passive Deployment of OneBusAway",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "private": true,
   "dependencies": {
     "ejs": "^1.0.0",
@@ -12,6 +12,7 @@
     "wireless-osx": "0.0.1"
   },
   "scripts": {
+    "preinstall": "bash deps.sh"
     "start": "node index.js"
   }
 }

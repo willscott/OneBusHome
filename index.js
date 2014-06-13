@@ -10,5 +10,5 @@ var indexRouter = require('./routes/index')(app.route('/'));
 var onlineRouter = require('./routes/online')(app.route('/online'));
 
 var server = app.listen(8080, function() {
-    console.log('Listening on port %d', server.address().port);
+    console.log('Listening on port %d', server.address());
 });
