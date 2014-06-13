@@ -12,7 +12,7 @@
     "wireless-osx": "0.0.1"
   },
   "scripts": {
-    "preinstall": "bash deps.sh"
+    "preinstall": "bash deps.sh",
     "start": "node index.js"
   }
 }
